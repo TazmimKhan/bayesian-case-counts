@@ -27,11 +27,16 @@ jupyter notebook bayesian_case_counts.ipynb
 ```
 Or run `python bayesian_case_counts.py`. Figures are saved in `figures/<Country>/`.
 
-## Key results  *(write in your own words after running)*
-- Weekly growth factor (Negative Binomial): **[…]** (95% credible interval […])
-- Doubling time: **[…]** weeks
-- Model comparison: **[…]**
+## Key results
+Bangladesh, weekly reported cases, weeks ending 26 April – 21 June 2020 (9 weeks):
+- Weekly growth factor (Negative Binomial): **1.32** (95% credible interval 1.26–1.38)
+- Doubling time: about **2.5 weeks** (95% credible interval 2.1–2.9)
+- Model comparison: the Poisson model covered only **11%** of observed weeks in its 95%
+  predictive interval; the Negative Binomial covered **100%** and was strongly preferred by LOO.
 - Detection probability: the posterior of *p* is almost identical to its prior → not identifiable.
+  Depending on the assumed *p* (1.0 to 0.1), true cases in the window range from about
+  **112,000 to 1.1 million**, against 109,850 reported.
+- Convergence: R-hat = 1.00 for all parameters, no divergent transitions.
 
 ![Posterior predictive check, Negative Binomial model](figures/Bangladesh/05_ppc_negbin.png)
 
@@ -48,5 +53,5 @@ Or run `python bayesian_case_counts.py`. Figures are saved in `figures/<Country>
 Python, pandas, NumPy, SciPy, PyMC, ArviZ, Matplotlib.
 
 ## Acknowledgement
-Code developed with the assistance of AI tools; data analysis, interpretation,
-and write-up are my own.
+Code and documentation were developed with the assistance of AI tools. I ran,
+checked, and interpreted the analysis.
